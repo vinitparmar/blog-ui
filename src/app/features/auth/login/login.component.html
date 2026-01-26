@@ -1,10 +1,33 @@
-<h2>Login</h2>
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to continue</p>
 
-<input placeholder="Email" [(ngModel)]="email" />
-<input type="password" placeholder="Password" [(ngModel)]="password" />
+    <label>Email</label>
+    <input
+      type="email"
+      placeholder="you@example.com"
+      [(ngModel)]="email"
+      autocomplete="email"
+    />
 
-<button (click)="submit()" [disabled]="loading">Login</button>
+    <label>Password</label>
+    <input
+      type="password"
+      placeholder="••••••••"
+      [(ngModel)]="password"
+      autocomplete="current-password"
+    />
 
-<p class="error" *ngIf="error">{{ error }}</p>
+    <button (click)="submit()" [disabled]="loading">
+      {{ loading ? 'Signing in…' : 'Sign in' }}
+    </button>
 
-<a routerLink="/register">Create account</a>
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+    <p class="switch">
+      New here?
+      <a routerLink="/register">Create an account</a>
+    </p>
+  </div>
+</div>

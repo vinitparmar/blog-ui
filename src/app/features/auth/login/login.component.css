@@ -1,14 +1,75 @@
-input {
-  display: block;
+.auth-wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.6rem;
+  max-width: 380px;
+  padding: 2.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: #fff;
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #000;
 }
 
 button {
-  padding: 0.6rem 1.2rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .error {
-  color: red;
+  margin-top: 1rem;
+  color: #d33;
+  font-size: 0.85rem;
+}
+
+.switch {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  text-align: center;
 }

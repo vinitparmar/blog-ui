@@ -21,15 +21,21 @@ export class LoginComponent {
   constructor(private auth:AuthService , private router : Router){}
 
   submit() {
-    this.loading = true;
+    if (!this.email || !this.password) {
+      this.error = 'Email and password are required';
+      return;
+    }
 
-    this.auth.login({ email: this.email, password: this.password})
-    .subscribe({
-      next:() => this.router.navigateByUrl('/'),
-      error : () => {
-         this.error = 'Invalid credentials';
+    this.loading = true;
+    this.error = '';
+
+    this.auth.login({ email: this.email, password: this.password })
+      .subscribe({
+        next: () => this.router.navigateByUrl('/profile'),
+        error: () => {
+          this.error = 'Invalid email or password';
           this.loading = false;
-      } 
-    });
+        }
+      });
   }
 }

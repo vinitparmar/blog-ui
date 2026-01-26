@@ -1,8 +1,33 @@
-<h2>Register</h2>
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h1>Create account</h1>
+    <p class="subtitle">Start writing and reading</p>
 
-<input placeholder="Email" [(ngModel)]="email" />
-<input type="password" placeholder="Password" [(ngModel)]="password" />
+    <label>Email</label>
+    <input
+      type="email"
+      placeholder="you@example.com"
+      [(ngModel)]="email"
+      autocomplete="email"
+    />
 
-<button (click)="submit()" [disabled]="loading">Register</button>
+    <label>Password</label>
+    <input
+      type="password"
+      placeholder="Minimum 6 characters"
+      [(ngModel)]="password"
+      autocomplete="new-password"
+    />
 
-<p *ngIf="success">Account created. Redirecting...</p>
+    <button (click)="submit()" [disabled]="loading">
+      {{ loading ? 'Creating…' : 'Create account' }}
+    </button>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+    <p class="switch">
+      Already have an account?
+      <a routerLink="/login">Sign in</a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+}
+
+.error {
+  color: red;
+}

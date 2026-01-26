@@ -1,0 +1,8 @@
+<h2>Register</h2>
+
+<input placeholder="Email" [(ngModel)]="email" />
+<input type="password" placeholder="Password" [(ngModel)]="password" />
+
+<button (click)="submit()" [disabled]="loading">Register</button>
+
+<p *ngIf="success">Account created. Redirecting...</p>

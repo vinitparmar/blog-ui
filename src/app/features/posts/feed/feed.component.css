@@ -1,0 +1,23 @@
+.page-title {
+  margin-bottom: 1.5rem;
+}
+
+.post-card {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.post-card:hover h2 {
+  text-decoration: underline;
+}
+
+.excerpt {
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #777;
+}

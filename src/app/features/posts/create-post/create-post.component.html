@@ -1,0 +1,16 @@
+<h1>Write a Post</h1>
+
+<input
+  placeholder="Title"
+  [(ngModel)]="title"
+/>
+
+<textarea
+  rows="12"
+  placeholder="Write your story..."
+  [(ngModel)]="content">
+</textarea>
+
+<button (click)="submit()" [disabled]="loading">
+  {{ loading ? 'Publishing...' : 'Publish' }}
+</button>

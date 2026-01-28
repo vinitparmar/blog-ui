@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Post, PostService } from '../post.service';
+import { Post, PostService } from '../../posts/post.service';
 
 @Component({
   selector: 'app-feed',

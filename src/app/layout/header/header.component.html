@@ -1,0 +1,18 @@
+<header class="header">
+  <h2 routerLink="/">BlogApp</h2>
+
+  <nav>
+    <a routerLink="/posts">Posts</a>
+    <a routerLink="/analytics/trending">Trending</a>
+
+    <ng-container *ngIf="loggedIn; else guest">
+      <a routerLink="/posts/create">Write</a>
+      <a routerLink="/profile">Profile</a>
+      <button (click)="logout()">Logout</button>
+    </ng-container>
+
+    <ng-template #guest>
+      <a routerLink="/login">Login</a>
+    </ng-template>
+  </nav>
+</header>

@@ -18,6 +18,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/profile/profile.component')
             .then(c => c.ProfileComponent)
+      },
+      {
+        path:'',
+        loadChildren :() => 
+          import('./features/posts/posts.routes')
+          .then(r => r.POSTS_ROUTES)
       }
     ]
   }

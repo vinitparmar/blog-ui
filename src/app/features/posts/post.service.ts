@@ -24,8 +24,8 @@ export class PostService {
         return this.api.get<Post>(`/posts/${id}`)
     }
 
-    createPost(paylaod:{title : string , content: String}){
-        return this.api.post('/posts',paylaod);
+    createPost(payload:{title : string , content: String}){
+        return this.api.post('/posts',payload);
     }
 
 }

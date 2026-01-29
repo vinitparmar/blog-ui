@@ -16,10 +16,6 @@ export class PostService {
 
     constructor(private api : ApiService){}
 
-    getFeed(){
-        return this.api.get<Post[]>('/posts/public');
-    }
-
     getPost(id: number){
         return this.api.get<Post>(`/posts/${id}`)
     }
@@ -27,5 +23,10 @@ export class PostService {
     createPost(payload:{title : string , content: String}){
         return this.api.post('/posts',payload);
     }
+
+    getFeed(page: number, size: number = 10) {
+        return this.api.get<Post[]>(`/posts/public?page=${page}&size=${size}`
+  );
+}
 
 }

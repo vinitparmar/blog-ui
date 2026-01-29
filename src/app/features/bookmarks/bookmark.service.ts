@@ -17,6 +17,11 @@ export class BookmarkService {
     }
 
     getMyBookmarks(){
-        return this.api.get('/bookmarks');
+        return this.api.get<any[]>('/bookmarks');
     }
+
+    toggleBookmark(postId: number) {
+    return this.api.post(`/bookmarks/${postId}`, {});
+  }
+    
 }

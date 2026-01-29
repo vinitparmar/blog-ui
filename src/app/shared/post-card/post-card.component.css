@@ -1,0 +1,16 @@
+.card {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}

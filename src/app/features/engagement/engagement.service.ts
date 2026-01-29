@@ -17,4 +17,8 @@ export class EngagementService {
     commentPost(postId : number , text : string){
         return this.api.post(`/comments/${postId}`,{text});
     }
+
+    sharePost(postId : number){
+        return this.api.post(`/shares/${postId}`,{});
+    }
 }

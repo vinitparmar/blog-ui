@@ -1,5 +1,6 @@
 <app-post-card
-*ngFor="let post of posts"
-[post]="post">
+  *ngFor="let post of posts"
+  [post]="post">
 </app-post-card>
-<p *ngIf="loading">Loading...</p>
+
+<button *ngIf="!loading" (click)="load()">Load more</button>

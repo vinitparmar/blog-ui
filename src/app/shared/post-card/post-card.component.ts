@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PostCardComponent {
 
-  @Input() post : any;
+  @Input({required:true}) post : any;
 
   constructor(
     private engagement : EngagementService,

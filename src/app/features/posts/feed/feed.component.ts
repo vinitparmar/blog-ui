@@ -24,11 +24,14 @@ export class FeedComponent {
 
     this.loading =  true;
 
-    this.postService.getFeed(this.page).subscribe( res =>{
-        this.posts.push(...res);
-        this.page++;
-        this.loading=false;
-    });
+     this.postService.getFeed(this.page).subscribe({
+    next: res => {
+      this.posts.push(...res);
+      this.page++;
+      this.loading = false;
+    },
+    error: () => this.loading = false
+  });
   }
 
   @HostListener('window:scroll')

@@ -9,7 +9,7 @@ export const POSTS_ROUTES: Routes = [
             .then(c => c.FeedComponent)
     },
      {
-        path : '/posts/:id',
+        path : 'posts/:id',
         loadComponent : () => 
             import('./post-detail/post-detail.component')
             .then(c => c.PostDetailComponent)

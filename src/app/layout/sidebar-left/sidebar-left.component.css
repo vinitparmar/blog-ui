@@ -1,0 +1,16 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar a {
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #111;
+}
+
+.sidebar a:hover {
+  background: #f3f4f6;
+}

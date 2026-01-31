@@ -1,0 +1,18 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: var(--text-base);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}

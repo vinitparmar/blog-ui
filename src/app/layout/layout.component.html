@@ -1,13 +1,15 @@
-<header class="header">
-  <h1 class="logo">BlogApp</h1>
+<app-header></app-header>
 
-  <nav>
-    <a routerLink="/login">Login</a>
-    <a routerLink="/register">Register</a>
-    <a routerLink="/profile">Profile</a>
-  </nav>
-</header>
+<div class="layout-container">
+  <aside class="left">
+    <app-sidebar-left></app-sidebar-left>
+  </aside>
 
-<main class="content">
-  <router-outlet></router-outlet>
-</main>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <aside class="right">
+    <app-sidebar-right></app-sidebar-right>
+  </aside>
+</div>

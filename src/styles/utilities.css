@@ -1,0 +1,13 @@
+.text-muted {
+  color: var(--muted);
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

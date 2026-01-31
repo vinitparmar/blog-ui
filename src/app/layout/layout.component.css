@@ -1,17 +1,30 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
+.layout-container {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-nav a {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: #333;
+.left,
+.right {
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
 }
 
 .content {
-  max-width: 800px;
-  margin: 2rem auto;
+  min-width: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .layout-container {
+    grid-template-columns: 1fr;
+  }
+  .left,
+  .right {
+    display: none;
+  }
 }

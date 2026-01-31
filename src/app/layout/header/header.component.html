@@ -1,18 +1,35 @@
 <header class="header">
-  <h2 routerLink="/">BlogApp</h2>
+  <div class="logo" routerLink="/">BlogIt</div>
 
-  <nav>
-    <a routerLink="/posts">Posts</a>
-    <a routerLink="/analytics/trending">Trending</a>
+  <input class="search" placeholder="Search posts…" />
 
-    <ng-container *ngIf="loggedIn; else guest">
-      <a routerLink="/posts/create">Write</a>
-      <a routerLink="/profile">Profile</a>
-      <button (click)="logout()">Logout</button>
+  <div class="actions">
+
+    <!-- NOT LOGGED IN -->
+    <ng-container *ngIf="!auth.isLoggedIn()">
+      <button class="btn btn-secondary" routerLink="/login">
+        Login
+      </button>
+
+      <button class="btn btn-primary" routerLink="/register">
+        Register
+      </button>
     </ng-container>
 
-    <ng-template #guest>
-      <a routerLink="/login">Login</a>
-    </ng-template>
-  </nav>
+    <!-- LOGGED IN -->
+    <ng-container *ngIf="auth.isLoggedIn()">
+      <button class="btn btn-secondary" routerLink="/create">
+        + Create
+      </button>
+
+      <button class="btn btn-primary" routerLink="/profile">
+        Profile
+      </button>
+
+      <button class="btn btn-ghost" (click)="logout()">
+        Logout
+      </button>
+    </ng-container>
+
+  </div>
 </header>

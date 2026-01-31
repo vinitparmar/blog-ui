@@ -12,16 +12,15 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
 
-  get loggedIn() {
+  get isLoggedIn() {
     return !!localStorage.getItem('token');
   }
 
 
-  constructor(private router: Router){}
+  constructor(public auth: AuthService){}
 
   logout(){
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+   this.auth.logout();
   }
 
 }

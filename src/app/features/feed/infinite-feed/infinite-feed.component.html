@@ -1,7 +1,0 @@
-<app-post-card
-  *ngFor="let post of posts"
-  [post]="post">
-</app-post-card>
-
-<button (click)="loadMore()" *ngIf="!loading">Load more</button>
-<p *ngIf="loading">Loading...</p>

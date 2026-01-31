@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfiniteFeedComponent } from './infinite-feed.component';
+import { FeedComponent } from './feed.component';
 
-describe('InfiniteFeedComponent', () => {
-  let component: InfiniteFeedComponent;
-  let fixture: ComponentFixture<InfiniteFeedComponent>;
+describe('FeedComponent', () => {
+  let component: FeedComponent;
+  let fixture: ComponentFixture<FeedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InfiniteFeedComponent]
+      imports: [FeedComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(InfiniteFeedComponent);
+    fixture = TestBed.createComponent(FeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

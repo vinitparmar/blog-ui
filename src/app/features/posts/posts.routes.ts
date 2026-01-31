@@ -5,8 +5,8 @@ export const POSTS_ROUTES: Routes = [
     {
         path : '',
         loadComponent : () => 
-            import('../feed/infinite-feed/infinite-feed.component')
-            .then(c => c.InfiniteFeedComponent)
+            import('./feed/feed.component')
+            .then(c => c.FeedComponent)
     },
      {
         path : '/posts/:id',
@@ -14,26 +14,24 @@ export const POSTS_ROUTES: Routes = [
             import('./post-detail/post-detail.component')
             .then(c => c.PostDetailComponent)
     },
-     {
+    {
         path : 'write',
         canActivate : [authGuard],
         loadComponent : () => 
             import('./create-post/create-post.component')
             .then(c => c.CreatePostComponent)
     },
-     {
-    path: 'bookmarks',
-    canActivate: [authGuard],
-    loadComponent: () =>
-      import('../bookmarks/bookmarks/bookmarks.component')
-        .then(c => c.BookmarksComponent)
-  },
-
-  // Trending (Phase 2)
-  {
-    path: 'trending',
-    loadComponent: () =>
-      import('../analytics/trending/trending.component')
-        .then(c => c.TrendingComponent)
-  }
+    {
+        path: 'bookmarks',
+        canActivate: [authGuard],
+        loadComponent: () =>
+          import('../bookmarks/bookmarks/bookmarks.component')
+            .then(c => c.BookmarksComponent)
+   },
+   {
+      path: 'trending',
+      loadComponent: () =>
+        import('../analytics/trending/trending.component')
+          .then(c => c.TrendingComponent)
+   }
 ];

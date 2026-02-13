@@ -1,10 +1,13 @@
-<div class="card">
-  <h3>{{ post.title }}</h3>
-  <p>{{ post.content | slice:0:150 }}...</p>
+<div class="post-card">
+  <h3 class="post-title">{{ post.title }}</h3>
 
-  <div class="actions">
-    <button (click)="like()">❤️ {{ post.readCount }}</button>
-    <button (click)="bookmarkPost()">🔖</button>
-    <button (click)="share()">🔗</button>
+  <p class="post-excerpt">
+    {{ post.content | slice:0:150 }}...
+  </p>
+
+  <div class="post-actions">
+    <button class="action-btn" (click)="like()">❤️ {{ post.readCount }}</button>
+    <button class="action-btn" (click)="bookmarkPost()">🔖</button>
+    <button class="action-btn" (click)="share()">🔗</button>
   </div>
 </div>

@@ -1,9 +1,23 @@
+.create-post {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
 input,
 textarea {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 textarea {
@@ -11,5 +25,20 @@ textarea {
 }
 
 button {
-  padding: 0.75rem 1.5rem;
+  background: #ff4500;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
 }

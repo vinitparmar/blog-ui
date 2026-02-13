@@ -15,6 +15,7 @@ export class CreatePostComponent {
    title ='';
    content = '';
    loading = false;
+   error = '';
 
     constructor(
       private postService : PostService,
@@ -22,12 +23,25 @@ export class CreatePostComponent {
     ){}
 
     submit(){
-      this.loading = false;
-      this.postService.createPost({
-          title : this.title,
-          content : this.content
-      }).subscribe(() =>{
-        this.router.navigateByUrl('/');
-      });
+     if (!this.title || !this.content) {
+      this.error = 'Title and content are required';
+      return;
+    }
+
+    this.loading = true;
+
+    this.postService.createPost({
+      title: this.title,
+      content: this.content
+    }).subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        console.log(err);
+        this.error = 'Failed to create post';
+        this.loading = false;
+      }
+    });
     }
 }

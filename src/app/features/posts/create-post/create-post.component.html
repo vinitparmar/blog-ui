@@ -1,16 +1,21 @@
-<h1>Write a Post</h1>
+<div class="create-post">
+  <h2>Create Post</h2>
 
-<input
-  placeholder="Title"
-  [(ngModel)]="title"
-/>
+  <input
+    type="text"
+    placeholder="Post title"
+    [(ngModel)]="title"
+  />
 
-<textarea
-  rows="12"
-  placeholder="Write your story..."
-  [(ngModel)]="content">
-</textarea>
+  <textarea
+    placeholder="Write your story..."
+    [(ngModel)]="content"
+    rows="10"
+  ></textarea>
 
-<button (click)="submit()" [disabled]="loading">
-  {{ loading ? 'Publishing...' : 'Publish' }}
-</button>
+  <button (click)="submit()" [disabled]="loading">
+    {{ loading ? 'Publishing...' : 'Publish' }}
+  </button>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+</div>

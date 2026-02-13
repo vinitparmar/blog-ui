@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from '../../core/services/api.service';
 import { tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private api : ApiService) { }
+  constructor(private api : ApiService, private router : Router) { }
 
  login(payload: { email: string; password: string }) {
     return this.api.post<{ token: string }>('/auth/login', payload).pipe(
@@ -21,6 +22,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    this.router.navigateByUrl('/');
   }
 
   isLoggedIn(): boolean {

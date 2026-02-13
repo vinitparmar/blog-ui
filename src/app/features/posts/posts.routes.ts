@@ -15,7 +15,7 @@ export const POSTS_ROUTES: Routes = [
             .then(c => c.PostDetailComponent)
     },
     {
-        path : 'write',
+        path : 'create',
         canActivate : [authGuard],
         loadComponent : () => 
             import('./create-post/create-post.component')

@@ -5,8 +5,8 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   return next(req).pipe(
     catchError(err => {
       if (err.status === 401) {
-        localStorage.removeItem('token');
-        window.location.href = '/login';
+        // localStorage.removeItem('token');
+        // window.location.href = '/';
       }
       return throwError(() => err);
     })

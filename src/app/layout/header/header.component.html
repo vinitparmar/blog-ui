@@ -18,7 +18,7 @@
 
     <!-- LOGGED IN -->
     <ng-container *ngIf="auth.isLoggedIn()">
-      <button class="btn btn-secondary" routerLink="/create">
+      <button class="btn btn-secondary" routerLink="/create" *ngIf="isLoggedIn">
         + Create
       </button>
 

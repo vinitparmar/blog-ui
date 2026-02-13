@@ -1,16 +1,58 @@
-.card {
-  padding: 16px;
-  border-bottom: 1px solid #eee;
+.post-card {
+  background: #ffffff;
+  padding: 20px 22px;
+  border-radius: 12px;
+  margin-bottom: 24px; /* ✅ SPACE BETWEEN POSTS */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.actions {
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.post-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937; /* dark gray */
+}
+
+/* Content preview */
+.post-excerpt {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+/* Actions bar */
+.post-actions {
   display: flex;
-  gap: 12px;
-  font-size: 14px;
+  align-items: center;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
 }
 
-button {
+/* Buttons */
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
   border: none;
-  background: none;
   cursor: pointer;
+  font-size: 14px;
+  color: #6b7280;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
 }
